@@ -9,4 +9,4 @@ feature 'Testing name collection' do
     expect(page).to have_text("Pikachu")
     expect(page).to have_text("Charizard")
   end
-end
+end 
