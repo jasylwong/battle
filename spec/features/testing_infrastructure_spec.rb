@@ -16,6 +16,6 @@ require 'spec_helper'
 feature 'Testing infrastructure' do
   scenario 'Can run app and check page content' do
     visit('/')
-    expect(page).to have_content("Who will be entering the Saffron City Gym?")
+    expect(page).to have_content("Welcome to the Pokémon Battle Arena")
   end
 end

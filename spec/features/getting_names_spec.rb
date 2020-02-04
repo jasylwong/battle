@@ -6,6 +6,6 @@ feature 'Enter names' do
     fill_in("player1_name", with: "Pikachu")
     fill_in("player2_name", with: "Charizard")
     click_button("Submit")
-    expect(page).to have_text("Pikachu vs Charizard")
+    expect(page).to have_text("Pikachu\nVERSUS\nCharizard")
   end
 end 

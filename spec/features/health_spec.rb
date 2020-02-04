@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature 'Testing health' do
-    scenario 'shows health' do
+feature 'View hit points' do
+    scenario 'see player 2 hit points' do
         visit('/')
         fill_in("player1_name", with: "Pikachu")
         fill_in("player2_name", with: "Charizard")
