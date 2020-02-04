@@ -2,11 +2,15 @@ require 'sinatra'
 
 class Battle < Sinatra::Base
     get '/' do
-        "Testing infrastructure working!"
+        erb(:index)
+    end
+
+    get '/names' do
+        erb(:index)
     end
 
     get '/battle' do
-        "BATTLE TIME!!"
+        params[:]
     end
     
     # start the server if ruby file executed directly
