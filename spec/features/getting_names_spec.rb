@@ -2,10 +2,7 @@ require 'spec_helper'
 
 feature 'Enter names' do
   scenario 'submitting names' do
-    visit('/')
-    fill_in("player1_name", with: "Pikachu")
-    fill_in("player2_name", with: "Charizard")
-    click_button("Submit")
+    sign_in_and_play
     expect(page).to have_text("Pikachu\nVERSUS\nCharizard")
   end
 end 
