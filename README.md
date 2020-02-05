@@ -2,7 +2,7 @@ Battle
 ==================
 
 
-[About](#about) | [How to use the programe](#How to use the program) | [Structure](#Structure) | [Features to be added](#Features to be added)
+[About](#about) | [How to use the programe](#How to use the programme) | [Structure](#Structure) | [Features to be added](#Features to be added)
 
 About
 ---------
