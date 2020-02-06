@@ -23,10 +23,10 @@ class Battle < Sinatra::Base
     post '/attack' do
         @player1 = $player1.name
         @player2 = $player2.name
-        $player2.attacked
+        $player1.attack($player2)
         erb :attack
     end
-    
+
     # start the server if ruby file executed directly
     run! if app_file == $0
 end
