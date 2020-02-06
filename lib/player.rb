@@ -10,9 +10,7 @@ class Player
       @attack_points = attack_points
     end
 
-
-
-    # def attacked
-    #   @health -= @attack_points
-    # end
+    def attacked
+      @health -= @attack_points
+    end
   end

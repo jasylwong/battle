@@ -18,7 +18,6 @@ feature 'attack' do
     scenario "player 1's attack reduces player 2's HP" do
         sign_in_and_play
         click_button("Attack")
-        # expect(page).not_to have_content('Player Jason: 100HP / Player Liz: 100HP')
         expect(page).to have_content('Player 2 health: 90HP')
     end
 end
