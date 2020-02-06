@@ -12,9 +12,4 @@ describe Player do
     expect(subject.health).to eq described_class::DEFAULT_HP
   end
 
-  describe '#attack' do
-    it 'damages the player' do
-      expect { jason.attack(liz) }. to change { liz.health }.by -described_class::DEFAULT_ATTACK_POINTS
-    end
-  end
 end
