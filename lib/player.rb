@@ -1,5 +1,5 @@
 class Player
-    attr_accessor :name, :health
+    attr_accessor :name, :health, :attack_points
 
     DEFAULT_HP = 100
     DEFAULT_ATTACK_POINTS = 10

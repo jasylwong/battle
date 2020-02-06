@@ -16,6 +16,7 @@ class Battle < Sinatra::Base
     end
 
     get '/play' do
+        $game = Game.new
         @player1 = $player1.name
         @player2 = $player2.name
         erb(:play)
@@ -24,7 +25,7 @@ class Battle < Sinatra::Base
     post '/attack' do
         @player1 = $player1.name
         @player2 = $player2.name
-        attack($player2)
+        $game.attack($player1, $player2)
         erb :attack
     end
 
