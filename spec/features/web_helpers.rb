@@ -1,6 +1,6 @@
 def sign_in_and_play
     visit('/')
-    fill_in("player1_name", with: "Pikachu")
-    fill_in("player2_name", with: "Charizard")
+    fill_in("player1_name", with: "Player 1")
+    fill_in("player2_name", with: "Player 2")
     click_button("Submit")
 end
