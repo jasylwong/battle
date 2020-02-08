@@ -9,7 +9,7 @@ feature 'switch turns' do
             sign_in_and_play
             click_button("Attack")
             expect(page).not_to have_content "Player 1's turn"
-            # expect(page).to have_content "Player 2's turn"
+            expect(page).to have_content "Player 2's turn"
         end
     end
 end
