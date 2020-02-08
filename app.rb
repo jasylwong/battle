@@ -5,6 +5,10 @@ require_relative 'lib/game.rb'
 class Battle < Sinatra::Base
     enable :sessions
 
+    before do
+        @game = Game.instance
+    end
+
     get '/' do
         erb(:index)
     end
@@ -12,17 +16,15 @@ class Battle < Sinatra::Base
     post '/names' do
         player_1 = Player.new(params[:player1_name])
         player_2 = Player.new(params[:player2_name])
-        $game = Game.new(player_1, player_2)
+        @game = Game.create(player_1, player_2)
         redirect('/play')
     end
 
     get '/play' do
-        @game = $game
         erb(:play)
     end
 
     post '/attack' do
-        @game = $game
         @game.attack(@game.player2)
         @game.switch_turn
         redirect('/win') if !@game.win_and_lose.nil?
@@ -30,7 +32,6 @@ class Battle < Sinatra::Base
     end
 
     post '/attack2' do
-        @game = $game
         @game.attack(@game.player1)
         @game.switch_turn
         redirect('/win') if !@game.win_and_lose.nil?
@@ -38,7 +39,6 @@ class Battle < Sinatra::Base
     end
 
     get '/win' do
-        @game = $game
         erb :win
     end
 
