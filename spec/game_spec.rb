@@ -4,8 +4,10 @@ require 'player'
 describe Game do
 
   subject(:game) { described_class.new(player1, player2) }
-  let(:player1) { double :player1 }
-  let(:player2) { double :player2 }
+  subject(:finished_game) { described_class.new(player1, dead_player) }
+  let(:player1) { double :player1, health: 100 }
+  let(:player2) { double :player2, health: 100 }
+  let(:dead_player) { double :dead_player, health: 0 }
     
   describe "#player1" do
     it 'retrieves the first player' do
@@ -22,18 +24,17 @@ describe Game do
 
   describe "#switch_turn" do
     it 'alternates which player\'s turn it is' do
-      expect(subject.current_turn). to eq player1
-      subject.switch_turn
-      expect(subject.current_turn). to eq player2
-      # subject.switch_turn
-      # expect(subject.turn). to eq "Player 1"
+      expect(game.current_turn). to eq player1
+      game.switch_turn
+      expect(game.current_turn). to eq player2
+      game.switch_turn
+      expect(game.current_turn). to eq player1
     end
   end
 
-
-
-  # it 'damages the player' do
-  #   expect(subject.attack(Player2)).to eq 90
-  # end
-
+  describe '#win_and_lose' do
+    it 'returns the winner' do
+      expect(finished_game.win_and_lose). to eq player1
+    end
+  end
 end

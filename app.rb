@@ -10,8 +10,6 @@ class Battle < Sinatra::Base
     end
 
     post '/names' do
-        # $player1 = Player.new(params[:player1_name])
-        # $player2 = Player.new(params[:player2_name])
         player_1 = Player.new(params[:player1_name])
         player_2 = Player.new(params[:player2_name])
         $game = Game.new(player_1, player_2)
@@ -27,6 +25,7 @@ class Battle < Sinatra::Base
         @game = $game
         @game.attack(@game.player2)
         @game.switch_turn
+        redirect('/win') if !@game.win_and_lose.nil?
         erb :attack
     end
 
@@ -34,7 +33,13 @@ class Battle < Sinatra::Base
         @game = $game
         @game.attack(@game.player1)
         @game.switch_turn
+        redirect('/win') if !@game.win_and_lose.nil?
         erb :attack2
+    end
+
+    get '/win' do
+        @game = $game
+        erb :win
     end
 
     # start the server if ruby file executed directly

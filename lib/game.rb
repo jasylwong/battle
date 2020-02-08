@@ -20,4 +20,8 @@ class Game
     @current_turn = @counter % 2 != 0 ? @player1 : @player2
   end
 
+  def win_and_lose
+    @player2 if @player1.health == 0
+    @player1 if @player2.health == 0
+  end
 end
