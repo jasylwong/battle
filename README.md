@@ -1,7 +1,7 @@
 Battle
 ==================
 
-Play now, [click here](http://jw-battle.herokuapp.com/)!
+Play now, [click here](http://jw-battle.herokuapp.com/)! Turn on sound for added experience ;)
 
 [About](#about) | [How to use the programe](#How_to_use_the_programme) | [Structure](#Structure) | [Features to be added](#Features_to_be_added)
 
